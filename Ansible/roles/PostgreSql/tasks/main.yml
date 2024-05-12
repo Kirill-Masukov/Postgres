@@ -1,0 +1,32 @@
+---
+- name: docker run
+  docker_container:
+    image: postgres
+    name: postgres
+    published_ports:
+      - 5432:5432
+    recreate: true
+    restart_policy: always
+    env:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: '1111'
+      POSTGRES_DB: my_db
+    volumes:
+      - /opt/postgres:/var/lib/postgresql/data
+  tags:
+    - postgres
+
+
+
+
+
+
+
+
+
+
+
+
+
+
